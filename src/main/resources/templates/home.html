@@ -2,10 +2,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
 <head>
     <title>Home Page</title>
+    <script src="https://unpkg.com/vue@3"></script>
 </head>
 <body>
-<h1>Welcome!</h1>
+<div id="ctn">
+    <h1>{{ greeting }}</h1>
+</div>
 
 <p>Click <a th:href="@{/hello}">here</a> to see a greeting.</p>
-</body>
+</body><script>
+    Vue.createApp({
+        data() {
+            return {
+                greeting: 'Hello, World!'
+            };
+        }
+    }).mount('#ctn')
+</script>
+
 </html>
